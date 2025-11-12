@@ -7,7 +7,7 @@ pipeline {
                 git branch: 'main', url: 'git@github.com:prachiingole14/jenkins_Fusion.git'
             }
         }
-        stage('terraform init') {
+        /*stage('terraform init') {
             steps {
                 sh 'terraform init'
             }
@@ -22,12 +22,12 @@ pipeline {
             steps {
                 sh 'terraform apply -auto-approve'
             }
-        }
+        }*/
 
-        //stage('terraform destroy') {
-           // steps {
-             //   sh 'terraform destroy -auto-approve'
-           // }
-        //}
+        stage('terraform destroy') {
+           steps {
+                sh 'terraform destroy -auto-approve'
+           }
+        }
     }
 }
