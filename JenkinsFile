@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Git checkout') {
+            steps {
+                git branch: 'main', url: 'git@github.com:prachiingole14/jenkins_Fusion.git'
+            }
+        }
+        stage('terraform init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+
+        stage('terraform apply') {
+            steps {
+                sh 'terraform apply'
+            }
+        }
+
+        stage('terraform destroy') {
+            steps {
+                sh 'terraform destroy -auto-approve'
+            }
+        }
+    }
+}
