@@ -12,17 +12,17 @@ provider "aws" {
 }
 
 resource "aws_vpc" "myvpc" {
-  cidr_block = "30.30.0.0/16"
+  cidr_block = "20.20.0.0/16"
 }
 resource "aws_subnet" "public" {
   vpc_id     = aws_vpc.myvpc.id
-  cidr_block = "30.30.1.0/24"
+  cidr_block = "20.20.1.0/24"
 
 
 }
 resource "aws_subnet" "private" {
   vpc_id     = aws_vpc.myvpc.id
-  cidr_block = "30.30.2.0/24"
+  cidr_block = "20.20.2.0/24"
 
   
   }
